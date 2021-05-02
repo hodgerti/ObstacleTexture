@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ObstacleTexturePlayer.shader" type="Shader" id=1]
+[ext_resource path="res://ObstacleTexturePlayer.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/gravity = null
+shader_param/initial_angle = null
+shader_param/speed = null
+shader_param/block_sz = null
+shader_param/tex_origin = null
+
+[node name="ObstacleTexturePlayer" type="Particles2D"]
+emitting = false
+amount = 1
+one_shot = true
+local_coords = false
+process_material = SubResource( 1 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )

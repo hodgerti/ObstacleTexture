@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ObstacleTextureBlood.gd" type="Script" id=1]
+[ext_resource path="res://ObstacleTextureBloodParticle.shader" type="Shader" id=2]
+[ext_resource path="res://blood_drops_and_drips.png" type="Texture" id=3]
+[ext_resource path="res://ObstacleTextureBloodCanvas.shader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/sprite_width = 32
+shader_param/sprite_height = 48
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/gravity = 4000.0
+shader_param/amount = 1
+shader_param/sprite_count = 6
+shader_param/sprite_count_split = 3
+shader_param/block_sz = null
+shader_param/tex_origin = null
+
+[node name="ObstacleTextureBlood" type="Particles2D"]
+material = SubResource( 2 )
+amount = 92
+lifetime = 2.0
+local_coords = false
+process_material = SubResource( 1 )
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
